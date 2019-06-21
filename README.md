@@ -5,7 +5,8 @@ checkout branche
 
 02 - State
 
-03 - Components
+03 - State
+
 --------------------------------------------------------------------------------------------------------------------------------------
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
