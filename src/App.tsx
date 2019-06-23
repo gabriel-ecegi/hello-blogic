@@ -1,6 +1,6 @@
 import React from "react";
-import { ProductDetail } from "./features/ProductDetail";
-import { Layout } from "./features/Layout";
+import { ProductDetail } from "./features/ProductDetail/Container";
+import { Layout } from "./features/Layout/Container";
 
 const App: React.FC = () => {
 	return (
