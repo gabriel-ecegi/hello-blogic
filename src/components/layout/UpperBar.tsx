@@ -2,12 +2,14 @@ import * as React from "react";
 import { Menu, Container } from "semantic-ui-react";
 import { CartInfo } from "./CartInfo";
 
-const UpperBar: React.FunctionComponent = _ => {
+type Props = { price: number };
+
+const UpperBar: React.FunctionComponent<Props> = props => {
 	return (
 		<>
 			<Menu fixed="top" inverted>
 				<Container>
-					<CartInfo />
+					<CartInfo price={props.price} />
 				</Container>
 			</Menu>
 		</>

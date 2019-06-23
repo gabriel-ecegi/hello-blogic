@@ -1,10 +1,12 @@
 import * as React from "react";
 import { Dropdown } from "semantic-ui-react";
 
-const CartInfo: React.FunctionComponent = _ => {
+type Props = { price: number };
+
+const CartInfo: React.FunctionComponent<Props> = props => {
 	return (
 		<>
-			<Dropdown item simple text="Košík 0 EUR">
+			<Dropdown item simple text={`Košík ${props.price} EUR`}>
 				<Dropdown.Menu>
 					<Dropdown.Item>Položka</Dropdown.Item>
 				</Dropdown.Menu>

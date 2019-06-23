@@ -3,7 +3,7 @@ import { ActionType, getType, createStandardAction } from "typesafe-actions";
 
 type CartStateType = { price: number };
 
-const initialCartState: CartStateType = { price: 0 };
+const initialCartState: CartStateType = { price: 200 };
 
 const addAction = createStandardAction("@cart/ADD")<{ productPrice: number }>();
 
@@ -29,8 +29,8 @@ const rootReducer = combineReducers({
 	cart: cartReducer
 });
 
-export type AppState = ReturnType<typeof rootReducer>;
+export type RootStateType = ReturnType<typeof rootReducer>;
 
-const store = createStore(cartReducer);
+const store = createStore(rootReducer);
 
 export { store };

@@ -1,10 +1,12 @@
 import * as React from "react";
 import { UpperBar } from "../../components/layout/UpperBar";
 
-const Layout: React.FunctionComponent = props => {
+export type StateProps = { price: number };
+
+const Layout: React.FunctionComponent<StateProps> = props => {
 	return (
 		<>
-			<UpperBar />
+			<UpperBar price={props.price} />
 			{props.children}
 		</>
 	);
