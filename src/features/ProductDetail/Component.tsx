@@ -1,7 +1,8 @@
 import * as React from "react";
 
-import bunda from "../bunda.jpg";
-import { Segment, Grid, Header, Image, Button, Icon } from "semantic-ui-react";
+import bunda from "../../bunda.jpg";
+import { Segment, Grid, Header, Image } from "semantic-ui-react";
+import { AddToCartButton } from "../../components/products/AddToCartButton";
 
 const ProductDetail: React.FC = () => {
 	return (
@@ -23,11 +24,7 @@ const ProductDetail: React.FC = () => {
 				</Grid.Row>
 				<Grid.Row>
 					<Grid.Column textAlign="center">
-						<Button labelPosition="left" icon={true} color="blue" size="huge">
-							<Icon name="cart plus" />
-							Kúpiť za 300 EUR
-						</Button>
-						<p>* v košíku už máte 0 ks tohto produktu </p>
+						<AddToCartButton />
 					</Grid.Column>
 				</Grid.Row>
 			</Grid>
@@ -35,4 +32,4 @@ const ProductDetail: React.FC = () => {
 	);
 };
 
-export { ProductDetail };
+export { ProductDetail as ProductDetailComponent };
