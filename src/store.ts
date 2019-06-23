@@ -3,11 +3,13 @@ import { ActionType, getType, createStandardAction } from "typesafe-actions";
 
 type CartStateType = { price: number };
 
-const initialCartState: CartStateType = { price: 200 };
+const initialCartState: CartStateType = { price: 0 };
 
-const addAction = createStandardAction("@cart/ADD")<{ productPrice: number }>();
+export const addAction = createStandardAction("@cart/ADD")<{
+	productPrice: number;
+}>();
 
-const resetAction = createStandardAction("@cart/RESET")();
+export const resetAction = createStandardAction("@cart/RESET")();
 
 type CartActionType = ActionType<typeof addAction | typeof resetAction>;
 
@@ -17,7 +19,8 @@ const cartReducer = (
 ): CartStateType => {
 	switch (action.type) {
 		case getType(addAction):
-			return { price: action.payload.productPrice + state.price, ...state };
+			console.log(action);
+			return { ...state, price: action.payload.productPrice + state.price };
 		case getType(resetAction):
 			return state;
 		default:
@@ -30,7 +33,12 @@ const rootReducer = combineReducers({
 });
 
 export type RootStateType = ReturnType<typeof rootReducer>;
+export type RootActionType = CartActionType; // | ActionType
 
-const store = createStore(rootReducer);
+const store = createStore(
+	rootReducer,
+	(window as any).__REDUX_DEVTOOLS_EXTENSION__ &&
+		(window as any).__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 export { store };

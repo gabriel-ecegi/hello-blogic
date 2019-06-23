@@ -1,14 +1,22 @@
 import * as React from "react";
 import { Button, Icon } from "semantic-ui-react";
 
-const AddToCartButton: React.FC = () => {
+type Props = { price: number; onAddToCart: (price: number) => void };
+
+const AddToCartButton: React.FC<Props> = props => {
 	return (
 		<>
-			<Button labelPosition="left" icon={true} color="blue" size="huge">
+			<Button
+				labelPosition="left"
+				icon={true}
+				color="blue"
+				size="huge"
+				onClick={() => props.onAddToCart(300)}
+			>
 				<Icon name="cart plus" />
 				Kúpiť za 300 EUR
 			</Button>
-			<p>* v košíku už máte 0 ks tohto produktu </p>
+			<p>* v košíku už máte {props.price / 300} ks tohto produktu </p>
 		</>
 	);
 };

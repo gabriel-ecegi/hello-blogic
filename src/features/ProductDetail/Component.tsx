@@ -4,7 +4,11 @@ import bunda from "../../bunda.jpg";
 import { Segment, Grid, Header, Image } from "semantic-ui-react";
 import { AddToCartButton } from "../../components/products/AddToCartButton";
 
-const ProductDetail: React.FC = () => {
+export type StateProps = { price: number };
+
+export type DispatchProps = { onAddToCart: (price: number) => void };
+
+const ProductDetail: React.FC<StateProps & DispatchProps> = props => {
 	return (
 		<Segment style={{ padding: "8em 0em" }} vertical>
 			<Grid container stackable verticalAlign="middle">
@@ -24,7 +28,10 @@ const ProductDetail: React.FC = () => {
 				</Grid.Row>
 				<Grid.Row>
 					<Grid.Column textAlign="center">
-						<AddToCartButton />
+						<AddToCartButton
+							price={props.price}
+							onAddToCart={props.onAddToCart}
+						/>
 					</Grid.Column>
 				</Grid.Row>
 			</Grid>
