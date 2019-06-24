@@ -19,7 +19,6 @@ const cartReducer = (
 ): CartStateType => {
 	switch (action.type) {
 		case getType(addAction):
-			console.log(action);
 			return { ...state, price: action.payload.productPrice + state.price };
 		case getType(resetAction):
 			return { ...state, price: 0 };
