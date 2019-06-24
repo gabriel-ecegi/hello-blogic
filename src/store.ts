@@ -22,7 +22,7 @@ const cartReducer = (
 			console.log(action);
 			return { ...state, price: action.payload.productPrice + state.price };
 		case getType(resetAction):
-			return state;
+			return { ...state, price: 0 };
 		default:
 			return state;
 	}
