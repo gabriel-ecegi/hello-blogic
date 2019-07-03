@@ -4,6 +4,7 @@ import { Input } from "./components/Input";
 import { Lowercase } from "./components/Lowercase";
 import { Uppercase } from "./components/Uppercase";
 import { ResetButton } from "./components/ResetButton";
+import { Letters } from "./components/Letters";
 
 const App: React.FC = () => {
 	const [name, setName] = useState("");
@@ -15,6 +16,7 @@ const App: React.FC = () => {
 					<Uppercase text={name} />
 					<Lowercase text={name} />
 					<ResetButton onReset={() => setName("")} />
+					<Letters text={name} />
 				</>
 			)}
 		</div>
