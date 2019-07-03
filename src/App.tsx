@@ -10,9 +10,13 @@ const App: React.FC = () => {
 	return (
 		<div className="App">
 			<Input name={name} changeName={e => setName(e)} />
-			<Uppercase text={name} />
-			<Lowercase text={name} />
-			<ResetButton onReset={() => setName("")} />
+			{name.length > 0 && (
+				<>
+					<Uppercase text={name} />
+					<Lowercase text={name} />
+					<ResetButton onReset={() => setName("")} />
+				</>
+			)}
 		</div>
 	);
 };
