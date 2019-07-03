@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import "./App.css";
 import { Input } from "./components/Input";
+import { Lowercase } from "./components/Lowercase";
+import { Uppercase } from "./components/Uppercase";
 
 const App: React.FC = () => {
 	const [name, setName] = useState("");
 	return (
 		<div className="App">
-			<p>Hodnota v inpute je {name}</p>
 			<Input name={name} changeName={e => setName(e)} />
+			<Uppercase text={name} />
+			<Lowercase text={name} />
 		</div>
 	);
 };
