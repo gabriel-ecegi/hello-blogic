@@ -9,6 +9,8 @@ checkout branche
 
 04 - Redux
 
+05 - Redux Sagas
+
 --------------------------------------------------------------------------------------------------------------------------------------
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
