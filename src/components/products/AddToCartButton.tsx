@@ -16,7 +16,9 @@ const AddToCartButton: React.FC<Props> = props => {
 				<Icon name="cart plus" />
 				Kúpiť za 300 EUR
 			</Button>
-			<p>* v košíku už máte {props.price / 300} ks tohto produktu </p>
+			<p>
+				* v košíku už máte {Math.round(props.price / 300)} ks tohto produktu{" "}
+			</p>
 		</>
 	);
 };
